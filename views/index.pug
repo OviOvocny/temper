@@ -1,0 +1,22 @@
+extends parts/main
+        
+block content
+  .controls
+    if rows
+      .selectwrap Dataset: 
+        select#datasetselect
+          option(selected disabled) Vyberte dataset
+          each opt in rows
+            option(value=opt.id)= opt.name
+    h2= name
+    button#switchBtn Dočasně přepnout stupnici
+  canvas#chartCanvas
+  
+append scripts
+  script.
+    var dataset = {
+      min: [#{dataMin}],
+      max: [#{dataMax}]
+    }
+  script(src="/js/Chart.min.js")
+  script(src="/js/index.js")

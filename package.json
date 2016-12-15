@@ -1,0 +1,17 @@
+{
+  "name": "temper",
+  "version": "1.0.0",
+  "description": "Temperature graphs for a given time period",
+  "main": "index.js",
+  "author": "Ovi",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mysql": "^2.12.0",
+    "pug": "^2.0.0-beta6"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}

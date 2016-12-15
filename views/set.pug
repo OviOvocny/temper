@@ -1,0 +1,9 @@
+extends parts/main
+
+block content
+  input#celsius(type="checkbox" onchange="localStorage.setItem('celsius', celsius.checked)" checked="true")
+  label(for="celsius")  Používat Celsiovu stupnici
+  
+append scripts
+  script.
+    if (localStorage.getItem("celsius") === "false") celsius.removeAttribute("checked")

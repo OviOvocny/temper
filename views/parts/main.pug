@@ -1,0 +1,45 @@
+html
+    head
+    
+      if title
+        title= title
+      else
+        title temper
+        
+      meta(name="viewport" content="width=device-width, initial-scale=1")
+        
+      block resources
+        link(rel="stylesheet" href="/css/normalize.min.css")
+        link(rel="stylesheet" href="/fonts/fonts.css")
+        link(rel="stylesheet" href="/css/style.css")
+        script(src="/js/prefixfree.min.js")
+      
+    body
+      block header
+        #top
+          .l t
+          h1#pTit
+            | teMp
+            span .
+            | eR
+
+        nav#n
+          ul
+            li(class=data? 'active':undefined)
+              a(href="/data")
+                i.mdi.mdi-database
+                div Databáze
+            li(class=index? 'active':undefined)
+              a(href="/")
+                i.mdi.mdi-chart-areaspline
+                div Vizualizace
+            li(class=set? 'active':undefined)
+              a(href="/set")
+                i.mdi.mdi-thermometer
+                div Možnosti
+
+      main
+        block content
+
+      block scripts
+        script(src="/js/global.js")

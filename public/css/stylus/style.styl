@@ -1,0 +1,182 @@
+// out: ../style.css, compress: true, prefix: false
+
+@import url('//cdn.materialdesignicons.com/1.5.54/css/materialdesignicons.min.css')
+  
+*, *::before, *::after
+  box-sizing border-box
+  
+body
+  min-height 100vh
+  font-family Fira Sans
+  background url(https://source.unsplash.com/category/nature/daily/?sky) fixed center / cover
+  background-color #161826
+  color white
+  &::before
+    content ""
+    position fixed
+    z-index -1
+    top 0
+    left 0
+    width 100vw
+    height 100vh
+    background linear-gradient(to top, #161826dd, #281618dd)
+
+#top
+  position sticky
+  position -webkit-sticky
+  top -50px
+  z-index 2
+  height 0
+  margin-bottom 15em
+  display flex
+  flex-direction column
+  align-items center
+  user-select none
+  cursor default
+  
+.l
+  width 65px
+  height 120px
+  background white
+  color #161826
+  font 45px Unica One
+  padding-left .15em
+  padding-top (@height) - 55px
+  
+h1
+  margin 0
+  font 65px Unica One
+  pointer-events none
+  span
+    display inline-block
+    margin-left -.25em
+    opacity .7
+  
+  // NAV
+  
+nav
+  margin-bottom 4em
+
+nav ul
+  position relative
+  padding 0
+  margin 0 auto
+  display flex
+  width 100%
+  max-width 1100px
+  justify-content center
+  list-style none
+  font-size 1.3em
+  li
+    position relative
+    z-index 2
+    display inline-block
+    margin 0 calc(.5em + 5%)
+    &::before
+      content ""
+      position absolute
+      z-index -1
+      left 50%
+      top 50%
+      transform translate(-50%, -50%) scale(.7) rotate(45deg)
+      opacity 0
+      width 92px
+      height @width
+      pointer-events none
+      background #fff5
+      transition transform .2s, opacity .2s
+    &.active::before
+      transform translate(-50%, -50%) scale(1) rotate(45deg)
+      opacity .5
+    &:hover::before
+      transform translate(-50%, -50%) scale(1.4) rotate(45deg)
+      opacity 1
+  
+nav a
+  .mdi
+    font-size 1.5em
+    margin-bottom .5em
+  display flex
+  flex-direction column
+  align-items center
+  color white
+  text-decoration none
+  
+  // MAIN
+  
+main
+  position relative
+  margin auto
+  max-width 1100px
+  padding 1em
+  
+.controls
+  display flex
+  justify-content space-between
+  align-items center
+  margin-bottom 2em
+  
+#chartCanvas
+  max-width 1100px
+  margin-bottom 4em
+  
+  // FORM ELEMENTS
+  
+bevel(c)
+  background c
+  background:
+    linear-gradient(135deg, transparent 10px, c 0) top left,
+    linear-gradient(225deg, transparent 10px, c 0) top right,
+    linear-gradient(315deg, transparent 10px, c 0) bottom right,
+    linear-gradient(45deg,  transparent 10px, c 0) bottom left;
+  background-size 50% 50%
+  background-repeat no-repeat
+  
+button
+  border 0
+  color #161826
+  cursor pointer
+  bevel white
+  padding .4em 1em
+  &:active
+    transform scale(.95)
+    
+select
+  -webkit-appearance none
+  border 0
+  background transparent
+  outline 0
+  font-family Fira Sans
+.selectwrap
+  color #161826
+  bevel white
+  padding .4em 1em
+  
+  // DATA PAGE
+  
+.datasetentry
+  margin-bottom 2em
+  
+  h3
+    margin 0
+    outline 0
+    &::before
+      content "Dataset "
+      color alpha(white, 60%)
+  
+  // TABLES
+  
+tbody
+  outline 0
+  &:focus td
+    background white
+    color #161826
+  
+td
+  border 1px solid
+  margin 0
+  padding .25em .5em
+  min-width 35px
+  transition .2s
+  &:hover
+    background alpha(white, 30%)

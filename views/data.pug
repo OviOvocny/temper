@@ -1,0 +1,23 @@
+extends parts/main
+
+block content
+  button(onclick="newTable()") Nový dataset
+  br
+  br
+  section.datasets
+    each row in rows
+      .datasetentry(data-id=row.id)
+        h3(contenteditable="true")= row.name
+        button(onclick="tableShrink("+row.id+")") Odebrat den
+        button(onclick="tableExtend("+row.id+")") Přidat den
+        table
+          tbody(contenteditable="true")
+            tr
+              each max in JSON.parse(row.max)
+                td= max
+            tr
+              each min in JSON.parse(row.min)
+                td= min
+              
+append scripts
+  script(src="/js/data.js")
