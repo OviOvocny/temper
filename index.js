@@ -29,7 +29,7 @@ const localDB = {
   database : 'temper'
 }
 
-const conn = db.createConnection(localDB)
+const conn = db.createConnection(remoteDB)
 
 conn.connect()
 
